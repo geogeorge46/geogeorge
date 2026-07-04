@@ -10,7 +10,7 @@ export default function PersonSchema() {
       "Geo George is a Software Engineer, Web Developer, IoT Developer, and Open Source Coordinator specializing in full-stack development, AI-enabled applications, cloud technologies, and connected systems.",
     sameAs: [
       "https://github.com/geogeorge46",
-      "https://www.linkedin.com/in/geo-george-883616276/",
+      "https://www.linkedin.com/in/geo-george-dev/",
       "https://www.instagram.com/g_eo.g_eorge?igsh=MTZ5bXVwc3dwNWoyYw%3D%3D",
       "https://www.facebook.com/gio.george.733/"
     ],

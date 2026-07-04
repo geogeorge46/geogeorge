@@ -277,7 +277,7 @@ export default function ContactClient() {
               <div className="grid grid-cols-2 gap-3 pt-2">
                 {/* LinkedIn */}
                 <a
-                  href="https://www.linkedin.com/in/geo-george-883616276/"
+                  href="https://www.linkedin.com/in/geo-george-dev/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white/70 hover:glass-glow border border-slate-200/80 px-4 py-3 rounded-2xl flex items-center justify-center gap-2 text-slate-700 hover:text-slate-900 transition-all select-none font-semibold text-xs"

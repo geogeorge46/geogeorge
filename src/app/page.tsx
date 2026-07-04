@@ -144,7 +144,7 @@ export default function Home() {
             </a>
             <a
               className="w-11 h-11 rounded-xl bg-white border border-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-900 hover:border-slate-300 hover:shadow-sm transition-all"
-              href="https://www.linkedin.com/in/geo-george-883616276/"
+              href="https://www.linkedin.com/in/geo-george-dev/"
               target="_blank"
               rel="noopener noreferrer"
               title="LinkedIn"

@@ -328,7 +328,7 @@ export default function AboutClient() {
                         </div>
                         <div className="flex items-center gap-1.5 leading-none">
                           <Linkedin className="w-2.5 h-2.5 text-blue-500" />
-                          <span>linkedin.com/in/geo-george-883616276/</span>
+                          <span>linkedin.com/in/geo-george-dev/</span>
                         </div>
                         <div className="flex items-center gap-1.5 leading-none">
                           <Github className="w-2.5 h-2.5 text-blue-500" />
@@ -527,7 +527,7 @@ export default function AboutClient() {
             </a>
             <a
               className="w-11 h-11 rounded-xl bg-white border border-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-900 hover:border-slate-300 hover:shadow-sm transition-all"
-              href="https://www.linkedin.com/in/geo-george-883616276/"
+              href="https://www.linkedin.com/in/geo-george-dev/"
               target="_blank"
               rel="noopener noreferrer"
               title="LinkedIn"
