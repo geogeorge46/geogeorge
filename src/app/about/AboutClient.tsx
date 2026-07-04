@@ -281,41 +281,29 @@ export default function AboutClient() {
                   {/* QR & Contact Info */}
                   <div className="grid grid-cols-12 gap-3 items-center border-t border-slate-800 pt-3">
                     {/* SVG Stylized QR Code Mockup */}
+                    {/* SVG Stylized QR Code Mockup */}
                     <a
-                      href="/resume.pdf"
+                      href="https://geogeorge.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="col-span-4 bg-white p-1.5 rounded-xl flex items-center justify-center shadow-md hover:scale-105 transition-transform cursor-pointer"
-                      title="Open Resume PDF"
+                      title="Open Portfolio Website"
                     >
-                      <svg width="60" height="60" viewBox="0 0 100 100" fill="none">
-                        {/* Outer corners */}
-                        <rect x="5" y="5" width="25" height="25" stroke="#1e293b" strokeWidth="8" />
-                        <rect x="12" y="12" width="11" height="11" fill="#1e293b" />
-                        
-                        <rect x="70" y="5" width="25" height="25" stroke="#1e293b" strokeWidth="8" />
-                        <rect x="77" y="12" width="11" height="11" fill="#1e293b" />
-                        
-                        <rect x="5" y="70" width="25" height="25" stroke="#1e293b" strokeWidth="8" />
-                        <rect x="12" y="77" width="11" height="11" fill="#1e293b" />
-                        
-                        {/* Center brackets/code blocks representation */}
-                        <path d="M40 10h5v15h-5zM50 5h10v5H50zM40 30h15v5H40zM60 20h10v5H60zM45 40h5v20h-5zM10 40h15v5H10zM25 50h10v5H25zM70 40h20v5H70zM75 50h10v10H75zM55 70h5v20h-5zM70 75h15v5H70zM80 85h10v5H80z" fill="#1e293b" />
-                        {/* Tech logo in the center of QR code */}
-                        <rect x="42" y="42" width="16" height="16" rx="4" fill="#2563eb" />
-                        <text x="50" y="53" fill="white" fontSize="12" fontWeight="bold" textAnchor="middle">&lt;&gt;</text>
+                      <svg width="60" height="60" viewBox="0 0 37 37" fill="none" shapeRendering="crispEdges">
+                        <path fill="#ffffff" d="M0 0h37v37H0z"/>
+                        <path stroke="#1e293b" strokeWidth="1" d="M4 4.5h7m2 0h2m1 0h1m1 0h1m3 0h2m2 0h7M4 5.5h1m5 0h1m1 0h6m3 0h4m1 0h1m5 0h1M4 6.5h1m1 0h3m1 0h1m2 0h4m2 0h1m3 0h2m1 0h1m1 0h3m1 0h1M4 7.5h1m1 0h3m1 0h1m2 0h3m1 0h1m2 0h1m1 0h2m2 0h1m1 0h3m1 0h1M4 8.5h1m1 0h3m1 0h1m1 0h1m3 0h2m2 0h4m2 0h1m1 0h3m1 0h1M4 9.5h1m5 0h1m2 0h4m1 0h6m2 0h1m5 0h1M4 10.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M13 11.5h4m2 0h1m1 0h1M4 12.5h1m1 0h1m1 0h1m1 0h1m3 0h1m5 0h3m5 0h1m2 0h1M7 13.5h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m3 0h3m2 0h1m2 0h1M6 14.5h3m1 0h1m1 0h1m1 0h3m1 0h4m3 0h3m2 0h3M5 15.5h1m3 0h1m2 0h1m1 0h1m2 0h2m1 0h2m1 0h2m6 0h1M6 16.5h1m3 0h1m7 0h2m1 0h1m2 0h3m2 0h1m1 0h2M4 17.5h2m2 0h1m2 0h2m2 0h1m2 0h2m1 0h1m2 0h3m2 0h1m2 0h1M6 18.5h5m1 0h6m4 0h1m1 0h2m1 0h1m1 0h1m1 0h2M4 19.5h1m1 0h1m1 0h2m1 0h2m6 0h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1M4 20.5h1m2 0h2m1 0h3m2 0h2m3 0h2m3 0h2m2 0h1m1 0h2M6 21.5h1m1 0h2m1 0h2m4 0h1m1 0h4m1 0h1m1 0h1m2 0h2m1 0h1M4 22.5h1m1 0h5m3 0h3m1 0h3m1 0h1m1 0h1m1 0h3m2 0h2M5 23.5h3m3 0h1m5 0h2m1 0h2m2 0h3m2 0h1m1 0h1M4 24.5h1m1 0h5m1 0h1m1 0h1m3 0h2m1 0h1m1 0h6M12 25.5h2m1 0h2m1 0h2m1 0h4m3 0h1m1 0h3M4 26.5h7m2 0h1m1 0h3m4 0h3m1 0h1m1 0h2m1 0h2M4 27.5h1m5 0h1m2 0h1m1 0h2m2 0h1m1 0h1m1 0h2m3 0h2M4 28.5h1m1 0h3m1 0h1m1 0h1m3 0h1m3 0h3m1 0h5m2 0h1M4 29.5h1m1 0h3m1 0h1m4 0h3m1 0h2m6 0h2m1 0h1M4 30.5h1m1 0h3m1 0h1m1 0h2m2 0h6m1 0h2m2 0h3m2 0h1M4 31.5h1m5 0h1m2 0h1m1 0h1m2 0h1m1 0h5m3 0h1m2 0h1M4 32.5h7m1 0h1m4 0h4m1 0h4m1 0h2m2 0h2"/>
                       </svg>
                     </a>
 
                     {/* QR label and contact icons */}
                     <div className="col-span-8 flex flex-col justify-center space-y-1.5 text-[8px] font-mono text-slate-400 text-left">
                       <a
-                        href="/resume.pdf"
+                        href="https://geogeorge.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-bold uppercase tracking-wider text-slate-300 hover:text-blue-400 transition-colors leading-none cursor-pointer"
                       >
-                        CLICK OR SCAN TO VIEW
+                        CLICK OR SCAN TO VISIT
                       </a>
                       <div className="flex flex-col space-y-1">
                         <div className="flex items-center gap-1.5 leading-none">
