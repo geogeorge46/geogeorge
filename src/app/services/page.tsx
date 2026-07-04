@@ -1,7 +1,12 @@
-"use client";
-
+import type { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Geo George Services | Web Development, IoT & Software Solutions",
+  description:
+    "Professional software engineering services offered by Geo George, including Full-Stack Web Development, Custom Management Systems, AI-powered applications, and IoT connected hardware integrations.",
+};
 import {
   Code2,
   Users,

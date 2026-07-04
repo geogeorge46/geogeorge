@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, DM_Serif_Display, Inter } from "next/font/google";
 import "./globals.css";
+import PersonSchema from "@/components/PersonSchema";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -19,9 +20,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Geo George | Software Engineer & IoT Developer",
+  metadataBase: new URL("https://geogeorge.vercel.app"),
+  title: {
+    default: "Geo George | Software Engineer, Web Developer & IoT Developer",
+    template: "%s | Geo George",
+  },
   description:
-    "Official portfolio of Geo George, Software Engineer specializing in full-stack development, IoT, AI-powered solutions, cloud platforms, and open source.",
+    "Official portfolio of Geo George, a Software Engineer, Web Developer, IoT Developer, and Open Source Coordinator building scalable full-stack, AI-enabled, cloud, and connected systems.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Geo George | Software Engineer, Web Developer & IoT Developer",
+    description:
+      "Official portfolio of Geo George, Software Engineer, Web Developer, IoT Developer, and Open Source Coordinator.",
+    url: "https://geogeorge.vercel.app",
+    siteName: "Geo George Portfolio",
+    type: "website",
+  },
   verification: {
     google: "k3oeW34OWfE_pWwbw3Tz4PDOLvRhKtqESb32vAh9y-c",
   },
@@ -37,6 +53,7 @@ export default function RootLayout({
       <body
         className={`${geistMono.variable} ${dmSerifDisplay.variable} ${inter.variable} antialiased bg-gradient-soft min-h-screen relative overflow-x-hidden`}
       >
+        <PersonSchema />
         {children}
       </body>
     </html>

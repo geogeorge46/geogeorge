@@ -99,10 +99,10 @@ export default function Home() {
               Geo George
             </motion.h1>
             <motion.p
-              className="text-slate-400 font-medium tracking-[0.25em] text-sm uppercase"
+              className="text-slate-400 font-semibold tracking-wider text-xs md:text-sm uppercase leading-relaxed max-w-md"
               variants={itemVariants}
             >
-              Software Engineer
+              Software Engineer · Web Developer · IoT Developer · Open Source Coordinator
             </motion.p>
           </div>
 
@@ -110,16 +110,26 @@ export default function Home() {
             className="text-slate-600 text-lg max-w-md leading-relaxed"
             variants={itemVariants}
           >
-            Building scalable, secure, and intelligent solutions across full-stack development, AI, IoT, and cloud technologies—while contributing to open-source communities, driving collaboration, and transforming ideas into impactful real-world products.
+            I’m Geo George, a Software Engineer and Web Developer specializing in building scalable, secure, and intelligent solutions across full-stack development, AI, IoT, and cloud technologies—while contributing to open-source communities, driving collaboration, and transforming ideas into impactful real-world products.
           </motion.p>
 
-          <motion.div className="flex flex-wrap gap-4 pt-2" variants={itemVariants}>
-            <Link href="/projects" className="bg-slate-900 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2.5 hover:bg-slate-800 hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer">
-              View My Work <ArrowUpRight className="w-4 h-4" />
+          <motion.div className="flex flex-col gap-4 pt-2" variants={itemVariants}>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/projects" className="bg-slate-900 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2.5 hover:bg-slate-800 hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer">
+                View Geo George&apos;s Software Projects <ArrowUpRight className="w-4 h-4" />
+              </Link>
+              <a href="/resume.pdf" download="Geo_George_Resume.pdf" className="border border-slate-200 bg-white text-slate-700 px-8 py-4 rounded-xl font-semibold flex items-center gap-2.5 hover:bg-slate-50 hover:text-slate-950 transition-all cursor-pointer">
+                Download Resume <Download className="w-4 h-4" />
+              </a>
+            </div>
+
+            <Link 
+              href="/about" 
+              className="text-xs font-bold text-slate-500 hover:text-slate-900 flex items-center gap-1 transition-colors select-none self-start group"
+            >
+              About Geo George 
+              <ArrowUpRight className="w-3.5 h-3.5 transform group-hover:translate-x-[2px] group-hover:translate-y-[-2px] transition-transform" />
             </Link>
-            <a href="/resume.pdf" download="Geo_George_Resume.pdf" className="border border-slate-200 bg-white text-slate-700 px-8 py-4 rounded-xl font-semibold flex items-center gap-2.5 hover:bg-slate-50 hover:text-slate-950 transition-all cursor-pointer">
-              Download Resume <Download className="w-4 h-4" />
-            </a>
           </motion.div>
 
           <motion.div className="flex items-center gap-4 pt-2" variants={itemVariants}>
