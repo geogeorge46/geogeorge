@@ -19,8 +19,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Geo George | Software Engineer Portfolio",
-  description: "Building scalable AI, IoT, and full-stack solutions with modern technologies.",
+  title: "Geo George | Software Engineer & IoT Developer",
+  description:
+    "Official portfolio of Geo George, Software Engineer specializing in full-stack development, IoT, AI-powered solutions, cloud platforms, and open source.",
+  verification: {
+    google: "k3oeW34OWfE_pWwbw3Tz4PDOLvRhKtqESb32vAh9y-c",
+  },
 };
 
 export default function RootLayout({
