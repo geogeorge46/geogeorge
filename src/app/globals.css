@@ -58,3 +58,19 @@ body {
   box-shadow: 0 0 25px rgba(59, 130, 246, 0.12);
   border-color: rgba(59, 130, 246, 0.35);
 }
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+

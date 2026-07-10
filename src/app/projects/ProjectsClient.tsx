@@ -4,12 +4,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
   Github,
   ExternalLink,
   Lock,
   GitBranch,
 } from "lucide-react";
+
+import Navbar from "@/components/Navbar";
 
 export default function ProjectsClient() {
   const [activeDomain, setActiveDomain] = useState<string | null>(null);
@@ -56,45 +57,20 @@ export default function ProjectsClient() {
       <div className="absolute top-12 left-24 w-32 h-32 dot-pattern opacity-30 -z-10" />
       <div className="absolute bottom-12 right-12 w-48 h-48 dot-pattern opacity-30 -z-10" />
 
-      {/* Navigation Header */}
-      <header className="max-w-7xl w-full mx-auto px-6 md:px-12 py-8 flex justify-between items-center relative z-20">
-        <Link href="/" className="text-3xl font-serif-display tracking-tighter select-none">
-          GG<span className="text-blue-500 font-sans">.</span>
-        </Link>
-        <nav className="hidden md:flex items-center space-x-12 text-sm font-medium text-slate-500">
-          <Link className="hover:text-slate-900 transition-colors" href="/">
-            Home
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/about">
-            About
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/services">
-            Services
-          </Link>
-          <Link className="relative py-1 text-slate-900 border-b-2 border-slate-900 transition-colors" href="/projects">
-            Projects
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/contact">
-            Contact
-          </Link>
-        </nav>
-        <Link href="/contact" className="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2 hover:bg-slate-800 hover:shadow-lg transition-all cursor-pointer">
-          Get in Touch <ArrowUpRight className="w-4 h-4" />
-        </Link>
-      </header>
+      <Navbar />
 
       {/* Main Container */}
-      <main className="max-w-7xl w-full mx-auto px-6 md:px-12 py-12 flex flex-col space-y-16 relative z-10">
+      <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 md:px-12 py-6 md:py-12 flex flex-col space-y-12 sm:space-y-16 relative z-10">
         
         {/* Title Section */}
         <section className="text-center space-y-4 max-w-3xl mx-auto">
           <span className="text-xs font-bold tracking-[0.2em] text-blue-600 uppercase">
             SELECTED WORK
           </span>
-          <h1 className="text-5xl md:text-6xl font-serif-display text-slate-900 tracking-tight leading-none">
+          <h1 className="text-4xl md:text-6xl font-serif-display text-slate-900 tracking-tight leading-none">
             Projects Built With Purpose
           </h1>
-          <p className="text-slate-500 text-md max-w-2xl mx-auto">
+          <p className="text-slate-500 text-sm sm:text-md max-w-2xl mx-auto">
             A collection of full-stack, AI, IoT, cloud, and productivity projects designed to solve real-world problems through scalable software and intelligent systems.
           </p>
         </section>
@@ -103,7 +79,7 @@ export default function ProjectsClient() {
         <section className="flex flex-col items-center py-8 relative">
           
           {/* Section Subtitle */}
-          <div className="text-center mb-10 space-y-1 z-10">
+          <div className="text-center space-y-2 mb-8">
             <span className="text-[10px] font-bold tracking-[0.25em] text-slate-400 uppercase leading-none">
               EXPERTISE MAPPING
             </span>
@@ -137,10 +113,10 @@ export default function ProjectsClient() {
             </div>
 
             {/* Center: Interactive 3D SVG Isometric Stack */}
-            <div className="lg:col-span-4 flex flex-col items-center justify-center relative order-1 lg:order-2 py-6">
+            <div className="lg:col-span-4 flex flex-col items-center justify-center relative order-1 lg:order-2 py-6 w-full">
               
               {/* SVG Isometric Stack */}
-              <svg width="280" height="360" viewBox="0 0 280 360" className="drop-shadow-2xl">
+              <svg viewBox="0 0 280 360" className="w-full max-w-[280px] h-auto drop-shadow-2xl">
                 <defs>
                   {/* Layer 1 (Full-Stack) Blue Gradients */}
                   <linearGradient id="blue-top" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -201,9 +177,18 @@ export default function ProjectsClient() {
 
                 {/* Layer 4 (Productivity) - BOTTOM LAYER */}
                 <g 
-                  className="cursor-pointer transition-all duration-300 hover:translate-y-[-5px]" 
+                  className="cursor-pointer transition-all duration-300 hover:translate-y-[-5px] focus:outline-none focus:translate-y-[-5px]" 
+                  tabIndex={0}
                   onMouseEnter={() => setActiveDomain("productivity")}
                   onMouseLeave={() => setActiveDomain(null)}
+                  onClick={() => setActiveDomain(activeDomain === "productivity" ? null : "productivity")}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setActiveDomain(activeDomain === "productivity" ? null : "productivity");
+                    }
+                  }}
+                  aria-label="Inspect Productivity & Cloud Tools domain"
                 >
                   <polygon points="140 255, 210 290, 140 325, 70 290" fill="url(#slate-top)" opacity={activeDomain && activeDomain !== "productivity" ? 0.4 : 1} />
                   <polygon points="70 290, 140 325, 140 340, 70 305" fill="url(#slate-left)" opacity={activeDomain && activeDomain !== "productivity" ? 0.4 : 1} />
@@ -213,9 +198,18 @@ export default function ProjectsClient() {
 
                 {/* Layer 3 (AI) */}
                 <g 
-                  className="cursor-pointer transition-all duration-300 hover:translate-y-[-5px]" 
+                  className="cursor-pointer transition-all duration-300 hover:translate-y-[-5px] focus:outline-none focus:translate-y-[-5px]" 
+                  tabIndex={0}
                   onMouseEnter={() => setActiveDomain("ai")}
                   onMouseLeave={() => setActiveDomain(null)}
+                  onClick={() => setActiveDomain(activeDomain === "ai" ? null : "ai")}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setActiveDomain(activeDomain === "ai" ? null : "ai");
+                    }
+                  }}
+                  aria-label="Inspect AI & NLP domain"
                 >
                   <polygon points="140 180, 210 215, 140 250, 70 215" fill="url(#purple-top)" opacity={activeDomain && activeDomain !== "ai" ? 0.4 : 1} />
                   <polygon points="70 215, 140 250, 140 265, 70 230" fill="url(#purple-left)" opacity={activeDomain && activeDomain !== "ai" ? 0.4 : 1} />
@@ -225,9 +219,18 @@ export default function ProjectsClient() {
 
                 {/* Layer 2 (IoT) */}
                 <g 
-                  className="cursor-pointer transition-all duration-300 hover:translate-y-[-5px]" 
+                  className="cursor-pointer transition-all duration-300 hover:translate-y-[-5px] focus:outline-none focus:translate-y-[-5px]" 
+                  tabIndex={0}
                   onMouseEnter={() => setActiveDomain("iot")}
                   onMouseLeave={() => setActiveDomain(null)}
+                  onClick={() => setActiveDomain(activeDomain === "iot" ? null : "iot")}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setActiveDomain(activeDomain === "iot" ? null : "iot");
+                    }
+                  }}
+                  aria-label="Inspect IoT & Hardware domain"
                 >
                   <polygon points="140 105, 210 140, 140 175, 70 140" fill="url(#emerald-top)" opacity={activeDomain && activeDomain !== "iot" ? 0.4 : 1} />
                   <polygon points="70 140, 140 175, 140 190, 70 155" fill="url(#emerald-left)" opacity={activeDomain && activeDomain !== "iot" ? 0.4 : 1} />
@@ -237,9 +240,18 @@ export default function ProjectsClient() {
 
                 {/* Layer 1 (Full-Stack) - TOP LAYER */}
                 <g 
-                  className="cursor-pointer transition-all duration-300 hover:translate-y-[-5px]" 
+                  className="cursor-pointer transition-all duration-300 hover:translate-y-[-5px] focus:outline-none focus:translate-y-[-5px]" 
+                  tabIndex={0}
                   onMouseEnter={() => setActiveDomain("full-stack")}
                   onMouseLeave={() => setActiveDomain(null)}
+                  onClick={() => setActiveDomain(activeDomain === "full-stack" ? null : "full-stack")}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setActiveDomain(activeDomain === "full-stack" ? null : "full-stack");
+                    }
+                  }}
+                  aria-label="Inspect Full-Stack Development domain"
                 >
                   <polygon points="140 30, 210 65, 140 100, 70 65" fill="url(#blue-top)" opacity={activeDomain && activeDomain !== "full-stack" ? 0.4 : 1} />
                   <polygon points="70 65, 140 100, 140 115, 70 80" fill="url(#blue-left)" opacity={activeDomain && activeDomain !== "full-stack" ? 0.4 : 1} />
@@ -250,7 +262,7 @@ export default function ProjectsClient() {
 
               {/* Dynamic Interactive HUD Indicator */}
               <div className="absolute bottom-2 text-[10px] font-mono text-slate-400 select-none">
-                👉 Hover segments to inspect
+                👉 Click, Tap, or Hover segments to inspect
               </div>
             </div>
 
@@ -294,7 +306,7 @@ export default function ProjectsClient() {
               ))
             ) : (
               <div className="text-center text-xs text-slate-400 italic">
-                Hover over the 3D isometric cube layers to inspect Geo George&apos;s active domains of expertise.
+                Click, Tap, or Hover over the 3D isometric cube layers to inspect Geo George&apos;s active domains of expertise.
               </div>
             )}
           </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Geo George Services | Web Development, IoT & Software Solutions",
@@ -151,45 +152,20 @@ export default function ServicesPage() {
       <div className="absolute top-12 left-24 w-32 h-32 dot-pattern opacity-30 -z-10" />
       <div className="absolute bottom-12 right-12 w-48 h-48 dot-pattern opacity-30 -z-10" />
 
-      {/* Navigation Header */}
-      <header className="max-w-7xl w-full mx-auto px-6 md:px-12 py-8 flex justify-between items-center relative z-20">
-        <Link href="/" className="text-3xl font-serif-display tracking-tighter select-none">
-          GG<span className="text-blue-500 font-sans">.</span>
-        </Link>
-        <nav className="hidden md:flex items-center space-x-12 text-sm font-medium text-slate-500">
-          <Link className="hover:text-slate-900 transition-colors" href="/">
-            Home
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/about">
-            About
-          </Link>
-          <Link className="relative py-1 text-slate-900 border-b-2 border-slate-900 transition-colors" href="/services">
-            Services
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/projects">
-            Projects
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/contact">
-            Contact
-          </Link>
-        </nav>
-        <Link href="/contact" className="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2 hover:bg-slate-800 hover:shadow-lg transition-all cursor-pointer">
-          Get in Touch <ArrowUpRight className="w-4 h-4" />
-        </Link>
-      </header>
+      <Navbar />
 
       {/* Main Body */}
-      <main className="max-w-7xl w-full mx-auto px-6 md:px-12 py-12 flex flex-col space-y-20 relative z-10 text-left">
+      <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 md:px-12 py-6 md:py-12 flex flex-col space-y-12 sm:space-y-20 relative z-10 text-left">
         
         {/* Title Section */}
         <section className="space-y-4 max-w-2xl">
           <span className="text-xs font-bold tracking-[0.2em] text-blue-600 uppercase">
             MY SERVICES
           </span>
-          <h1 className="text-5xl md:text-6xl font-serif-display text-slate-900 tracking-tight leading-none">
+          <h1 className="text-4xl md:text-6xl font-serif-display text-slate-900 tracking-tight leading-none">
             Capabilities & Expertise
           </h1>
-          <p className="text-slate-500 text-md leading-relaxed">
+          <p className="text-slate-500 text-sm sm:text-md leading-relaxed">
             Delivering robust development services—spanning responsive full-stack architectures, hardware IoT modules, customized operational tools, and intelligent automation systems.
           </p>
         </section>
@@ -199,7 +175,7 @@ export default function ServicesPage() {
           {servicesList.map((service, idx) => (
             <div
               key={idx}
-              className="bg-white/60 p-6.5 rounded-[2rem] border border-white/60 shadow-lg hover:shadow-xl hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white/60 p-5 sm:p-6.5 rounded-3xl sm:rounded-[2rem] border border-white/60 shadow-lg hover:shadow-xl hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between group"
             >
               <div className="space-y-5">
                 {/* Header Tag and Icon */}
@@ -242,7 +218,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Development Workflow Section */}
-        <section className="bg-white/60 p-8 md:p-10 rounded-[2.5rem] border border-white/60 shadow-lg space-y-10">
+        <section className="bg-white/60 p-6 sm:p-8 md:p-10 rounded-3xl sm:rounded-[2.5rem] border border-white/60 shadow-lg space-y-8 sm:space-y-10">
           <div className="flex items-center gap-3">
             <div className="bg-blue-50 p-2.5 rounded-xl border border-blue-100/50">
               <Zap className="w-5.5 h-5.5 text-blue-500" />
@@ -269,7 +245,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Footer Call-to-Action */}
-        <section className="bg-slate-950 text-slate-200 p-8 md:p-10 rounded-[2.5rem] border border-slate-800/80 shadow-2xl flex flex-col md:flex-row justify-between items-center gap-6 relative overflow-hidden">
+        <section className="bg-slate-950 text-slate-200 p-6 sm:p-8 md:p-10 rounded-3xl sm:rounded-[2.5rem] border border-slate-800/80 shadow-2xl flex flex-col md:flex-row justify-between items-center gap-6 relative overflow-hidden">
           <div className="absolute inset-0 dot-pattern opacity-[0.03] -z-10" />
           <div className="space-y-2 text-center md:text-left">
             <span className="text-[9px] font-bold text-blue-500 font-mono uppercase tracking-wider">COLLABORATE</span>

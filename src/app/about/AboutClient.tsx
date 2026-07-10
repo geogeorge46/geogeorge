@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -12,11 +11,12 @@ import {
   Cpu,
   Brain,
   Users,
-  ArrowUpRight,
   Github,
   Linkedin,
   Download,
 } from "lucide-react";
+
+import Navbar from "@/components/Navbar";
 
 export default function AboutClient() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -75,32 +75,7 @@ export default function AboutClient() {
       <div className="absolute top-12 left-24 w-32 h-32 dot-pattern opacity-30 -z-10" />
       <div className="absolute bottom-12 right-12 w-48 h-48 dot-pattern opacity-30 -z-10" />
 
-      {/* Navigation Header */}
-      <header className="max-w-7xl w-full mx-auto px-6 md:px-12 py-8 flex justify-between items-center relative z-20">
-        <Link href="/" className="text-3xl font-serif-display tracking-tighter select-none">
-          GG<span className="text-blue-500 font-sans">.</span>
-        </Link>
-        <nav className="hidden md:flex items-center space-x-12 text-sm font-medium text-slate-500">
-          <Link className="hover:text-slate-900 transition-colors" href="/">
-            Home
-          </Link>
-          <Link className="relative py-1 text-slate-900 border-b-2 border-slate-900 transition-colors" href="/about">
-            About
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/services">
-            Services
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/projects">
-            Projects
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/contact">
-            Contact
-          </Link>
-        </nav>
-        <Link href="/contact" className="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2 hover:bg-slate-800 hover:shadow-lg transition-all cursor-pointer">
-          Get in Touch <ArrowUpRight className="w-4 h-4" />
-        </Link>
-      </header>
+      <Navbar />
 
       {/* Main Body */}
       <main className="max-w-7xl w-full mx-auto px-6 md:px-12 py-12 flex flex-col space-y-16">
@@ -130,7 +105,14 @@ export default function AboutClient() {
 
             {/* Glassmorphic Badge Casing */}
             <div 
-              className="mt-4 w-[330px] h-[500px] rounded-[2.5rem] p-3 glass-card relative select-none cursor-pointer perspective-1000 shadow-xl"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setIsFlipped(!isFlipped);
+                }
+              }}
+              className="mt-4 w-full max-w-[300px] sm:max-w-[330px] h-[450px] sm:h-[500px] rounded-[2rem] sm:rounded-[2.5rem] p-3 glass-card relative select-none cursor-pointer perspective-1000 shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
               onMouseEnter={() => setIsFlipped(true)}
               onMouseLeave={() => setIsFlipped(false)}
               onClick={() => setIsFlipped(!isFlipped)}
@@ -333,6 +315,18 @@ export default function AboutClient() {
             <span className="text-[10px] text-slate-400 mt-4 select-none font-medium animate-pulse">
               ✨ Hover or Click to Flip Badge
             </span>
+
+            <button 
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsFlipped(!isFlipped);
+              }}
+              className="mt-3 px-4 py-2 bg-slate-900 text-white hover:bg-slate-800 text-xs font-semibold rounded-xl transition-all cursor-pointer border border-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 flex items-center gap-1.5 shadow-sm"
+              aria-label={isFlipped ? "Show badge front" : "Show badge back"}
+            >
+              🔄 {isFlipped ? "Show Front" : "Show Back Details"}
+            </button>
           </section>
 
           {/* Right Column: About Me Bio Details */}
@@ -420,11 +414,11 @@ export default function AboutClient() {
         <section className="bg-slate-950/95 border border-slate-800/80 rounded-[2.5rem] p-8 md:p-10 shadow-2xl relative overflow-hidden select-none">
           {/* Subtle grid mesh background */}
           <div className="absolute inset-0 dot-pattern opacity-[0.03] -z-10" />
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 divide-y lg:divide-y-0 lg:divide-x divide-slate-800/50">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 lg:divide-x lg:divide-y-0 divide-slate-800/50">
             {stats.map((item, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center justify-center text-center space-y-1 p-2 pt-6 lg:pt-2 first:pt-2"
+                className="flex flex-col items-center justify-center text-center space-y-1 p-2"
               >
                 <span className="text-4xl md:text-5xl font-extrabold text-blue-500 font-sans tracking-tight leading-none">
                   {item.value}

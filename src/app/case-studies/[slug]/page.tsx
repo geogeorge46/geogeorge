@@ -2,6 +2,7 @@
 
 import React, { use } from "react";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import { projects } from "@/data/projects";
 import {
   ArrowLeft,
@@ -114,32 +115,7 @@ export default function CaseStudyPage({ params }: PageProps) {
       <div className="absolute top-12 left-24 w-32 h-32 dot-pattern opacity-30 -z-10" />
       <div className="absolute bottom-12 right-12 w-48 h-48 dot-pattern opacity-30 -z-10" />
 
-      {/* Navigation Header */}
-      <header className="max-w-7xl w-full mx-auto px-6 md:px-12 py-8 flex justify-between items-center relative z-20">
-        <Link href="/" className="text-3xl font-serif-display tracking-tighter select-none">
-          GG<span className="text-blue-500 font-sans">.</span>
-        </Link>
-        <nav className="hidden md:flex items-center space-x-12 text-sm font-medium text-slate-500">
-          <Link className="hover:text-slate-900 transition-colors" href="/">
-            Home
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/about">
-            About
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/services">
-            Services
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/projects">
-            Projects
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/contact">
-            Contact
-          </Link>
-        </nav>
-        <Link href="/contact" className="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2 hover:bg-slate-800 hover:shadow-lg transition-all cursor-pointer">
-          Get in Touch <ArrowUpRight className="w-4 h-4" />
-        </Link>
-      </header>
+      <Navbar />
 
       {/* Main Container */}
       <main className="max-w-5xl w-full mx-auto px-6 md:px-12 py-8 flex flex-col space-y-12 relative z-10 text-left">

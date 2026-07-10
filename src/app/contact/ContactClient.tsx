@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   MapPin,
@@ -17,6 +16,8 @@ import {
   Check,
   CheckCircle2,
 } from "lucide-react";
+
+import Navbar from "@/components/Navbar";
 
 export default function ContactClient() {
   // Form state
@@ -61,54 +62,29 @@ export default function ContactClient() {
       <div className="absolute top-12 left-24 w-32 h-32 dot-pattern opacity-30 -z-10" />
       <div className="absolute bottom-12 right-12 w-48 h-48 dot-pattern opacity-30 -z-10" />
 
-      {/* Navigation Header */}
-      <header className="max-w-7xl w-full mx-auto px-6 md:px-12 py-8 flex justify-between items-center relative z-20">
-        <Link href="/" className="text-3xl font-serif-display tracking-tighter select-none">
-          GG<span className="text-blue-500 font-sans">.</span>
-        </Link>
-        <nav className="hidden md:flex items-center space-x-12 text-sm font-medium text-slate-500">
-          <Link className="hover:text-slate-900 transition-colors" href="/">
-            Home
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/about">
-            About
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/services">
-            Services
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/projects">
-            Projects
-          </Link>
-          <Link className="relative py-1 text-slate-900 border-b-2 border-slate-900 transition-colors" href="/contact">
-            Contact
-          </Link>
-        </nav>
-        <a href="mailto:geogeorge.dev@gmail.com" className="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2 hover:bg-slate-800 hover:shadow-lg transition-all cursor-pointer">
-          Get in Touch <ArrowUpRight className="w-4 h-4" />
-        </a>
-      </header>
+      <Navbar />
 
       {/* Main Body */}
-      <main className="max-w-7xl w-full mx-auto px-6 md:px-12 py-12 flex flex-col space-y-12 relative z-10 text-left">
+      <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 md:px-12 py-6 md:py-12 flex flex-col space-y-8 sm:space-y-12 relative z-10 text-left">
         
         {/* Title Section */}
         <section className="space-y-4 max-w-2xl">
           <span className="text-xs font-bold tracking-[0.2em] text-blue-600 uppercase">
             LET&apos;S CONNECT
           </span>
-          <h1 className="text-5xl md:text-6xl font-serif-display text-slate-900 tracking-tight leading-none">
+          <h1 className="text-4xl md:text-6xl font-serif-display text-slate-900 tracking-tight leading-none">
             Get in Touch
           </h1>
-          <p className="text-slate-500 text-md leading-relaxed">
+          <p className="text-slate-500 text-sm sm:text-md leading-relaxed">
             Have a project idea, internship opening, or just want to say hello? Drop me a message below or reach out directly on my social channels!
           </p>
         </section>
 
         {/* Layout Grid: Form & Info */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
           {/* Left Column: Contact Form */}
-          <section className="lg:col-span-7 bg-white/60 p-6 md:p-8 rounded-[2.5rem] border border-white/60 shadow-lg flex flex-col justify-between relative overflow-hidden">
+          <section className="lg:col-span-7 bg-white/60 p-5 sm:p-6 md:p-8 rounded-3xl sm:rounded-[2.5rem] border border-white/60 shadow-lg flex flex-col justify-between relative overflow-hidden">
             
             {/* Confetti/Success Notification Overlay */}
             <AnimatePresence>
@@ -159,7 +135,7 @@ export default function ContactClient() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="John Doe"
-                    className="bg-white/80 border border-slate-200/80 px-4 py-3 rounded-xl text-xs font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/10 transition-all shadow-sm"
+                    className="bg-white/80 border border-slate-200/80 px-4 py-3 rounded-xl text-base md:text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/10 transition-all shadow-sm"
                   />
                 </div>
 
@@ -172,7 +148,7 @@ export default function ContactClient() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="john@example.com"
-                    className="bg-white/80 border border-slate-200/80 px-4 py-3 rounded-xl text-xs font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/10 transition-all shadow-sm"
+                    className="bg-white/80 border border-slate-200/80 px-4 py-3 rounded-xl text-base md:text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/10 transition-all shadow-sm"
                   />
                 </div>
               </div>
@@ -185,7 +161,7 @@ export default function ContactClient() {
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
                   placeholder="Project Collaboration / Internship Inquiry"
-                  className="bg-white/80 border border-slate-200/80 px-4 py-3 rounded-xl text-xs font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/10 transition-all shadow-sm"
+                  className="bg-white/80 border border-slate-200/80 px-4 py-3 rounded-xl text-base md:text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/10 transition-all shadow-sm"
                 />
               </div>
 
@@ -198,7 +174,7 @@ export default function ContactClient() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Type your message details here..."
-                  className="bg-white/80 border border-slate-200/80 px-4 py-3 rounded-xl text-xs font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/10 resize-none transition-all shadow-sm"
+                  className="bg-white/80 border border-slate-200/80 px-4 py-3 rounded-xl text-base md:text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/10 resize-none transition-all shadow-sm"
                 />
               </div>
 
@@ -222,7 +198,7 @@ export default function ContactClient() {
           <section className="lg:col-span-5 flex flex-col gap-6 justify-between text-slate-800">
             
             {/* Direct contact info box */}
-            <div className="bg-white/60 p-6 md:p-8 rounded-[2.5rem] border border-white/60 shadow-lg space-y-6">
+            <div className="bg-white/60 p-5 sm:p-6 md:p-8 rounded-3xl sm:rounded-[2.5rem] border border-white/60 shadow-lg space-y-6">
               <div className="space-y-1">
                 <span className="text-[10px] font-bold tracking-wider text-slate-400 uppercase">DIRECT CONTACT</span>
                 <h2 className="text-2xl font-serif-display text-slate-800">Office Channels</h2>

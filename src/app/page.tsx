@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ArrowUpRight, Download } from "lucide-react";
 import RotatingGrid from "@/components/RotatingGrid";
 
+import Navbar from "@/components/Navbar";
+
 const techStack = [
   { name: "MERN", icon: "⚛️" },
   { name: "Full-Stack", icon: "💻" },
@@ -47,35 +49,10 @@ export default function Home() {
       <div className="absolute top-12 left-24 w-32 h-32 dot-pattern opacity-30 -z-10" />
       <div className="absolute bottom-12 right-12 w-48 h-48 dot-pattern opacity-30 -z-10" />
 
-      {/* Navigation Header */}
-      <header className="max-w-7xl w-full mx-auto px-6 md:px-12 py-8 flex justify-between items-center relative z-20">
-        <Link href="/" className="text-3xl font-serif-display tracking-tighter select-none">
-          GG<span className="text-blue-500 font-sans">.</span>
-        </Link>
-        <nav className="hidden md:flex items-center space-x-12 text-sm font-medium text-slate-500">
-          <Link className="relative py-1 text-slate-900 border-b-2 border-slate-900 transition-colors" href="/">
-            Home
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/about">
-            About
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/services">
-            Services
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/projects">
-            Projects
-          </Link>
-          <Link className="hover:text-slate-900 transition-colors" href="/contact">
-            Contact
-          </Link>
-        </nav>
-        <Link href="/contact" className="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2 hover:bg-slate-800 hover:shadow-lg transition-all cursor-pointer">
-          Get in Touch <ArrowUpRight className="w-4 h-4" />
-        </Link>
-      </header>
+      <Navbar />
 
       {/* Hero Section */}
-      <main className="max-w-7xl w-full mx-auto px-6 md:px-12 py-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
+      <main className="max-w-7xl w-full mx-auto px-6 md:px-12 py-4 md:py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center flex-grow">
         {/* Left Side: Editorial Bio */}
         <motion.section
           className="lg:col-span-5 flex flex-col space-y-8"
@@ -93,7 +70,7 @@ export default function Home() {
 
           <div className="space-y-4">
             <motion.h1
-              className="text-7xl md:text-8xl lg:text-[7.5rem] leading-[0.85] font-serif-display text-slate-900 tracking-tight"
+              className="text-[clamp(2.5rem,11vw,6rem)] lg:text-[7.5rem] leading-[0.85] font-serif-display text-slate-900 tracking-tight"
               variants={itemVariants}
             >
               Geo George
@@ -107,19 +84,19 @@ export default function Home() {
           </div>
 
           <motion.p
-            className="text-slate-600 text-lg max-w-md leading-relaxed"
+            className="text-slate-600 text-base md:text-lg max-w-md leading-relaxed"
             variants={itemVariants}
           >
             I’m Geo George, a Software Engineer and Web Developer specializing in building scalable, secure, and intelligent solutions across full-stack development, AI, IoT, and cloud technologies—while contributing to open-source communities, driving collaboration, and transforming ideas into impactful real-world products.
           </motion.p>
 
-          <motion.div className="flex flex-col gap-4 pt-2" variants={itemVariants}>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/projects" className="bg-slate-900 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2.5 hover:bg-slate-800 hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer">
-                View Geo George&apos;s Software Projects <ArrowUpRight className="w-4 h-4" />
+          <motion.div className="flex flex-col gap-4 pt-2 w-full sm:w-auto" variants={itemVariants}>
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <Link href="/projects" className="bg-slate-900 text-white px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold flex items-center justify-center gap-2.5 hover:bg-slate-800 hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer text-sm sm:text-base w-full sm:w-auto text-center">
+                View Geo George&apos;s Projects <ArrowUpRight className="w-4 h-4 shrink-0" />
               </Link>
-              <a href="/resume.pdf" download="Geo_George_Resume.pdf" className="border border-slate-200 bg-white text-slate-700 px-8 py-4 rounded-xl font-semibold flex items-center gap-2.5 hover:bg-slate-50 hover:text-slate-950 transition-all cursor-pointer">
-                Download Resume <Download className="w-4 h-4" />
+              <a href="/resume.pdf" download="Geo_George_Resume.pdf" className="border border-slate-200 bg-white text-slate-700 px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold flex items-center justify-center gap-2.5 hover:bg-slate-50 hover:text-slate-950 transition-all cursor-pointer text-sm sm:text-base w-full sm:w-auto text-center">
+                Download Resume <Download className="w-4 h-4 shrink-0" />
               </a>
             </div>
 
@@ -162,7 +139,7 @@ export default function Home() {
         </motion.section>
 
         {/* Right Side: Interactive Grid */}
-        <section className="lg:col-span-7 flex flex-col items-center justify-center relative py-8">
+        <section className="lg:col-span-7 flex flex-col items-center justify-center relative py-4 lg:py-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -174,7 +151,7 @@ export default function Home() {
 
           {/* Glassmorphic Tech Stack Summary Panel */}
           <motion.div
-            className="glass-card mt-12 w-full max-w-[410px] rounded-[2rem] p-5 grid grid-cols-4 gap-2.5 relative z-10"
+            className="glass-card mt-6 sm:mt-12 w-full max-w-[410px] rounded-3xl p-3 sm:p-5 grid grid-cols-4 gap-1.5 sm:gap-2.5 relative z-10"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -182,7 +159,7 @@ export default function Home() {
             {techStack.map((tech, i) => (
               <motion.div
                 key={i}
-                className="bg-white/60 p-2.5 rounded-xl flex flex-col items-center justify-center gap-1 border border-white/40 shadow-sm select-none cursor-default text-center"
+                className="bg-white/60 p-1.5 sm:p-2.5 rounded-xl flex flex-col items-center justify-center gap-1 border border-white/40 shadow-sm select-none cursor-default text-center"
                 animate={{
                   y: [0, -4, 0],
                 }}
@@ -200,7 +177,7 @@ export default function Home() {
                 }}
               >
                 <span className="text-lg">{tech.icon}</span>
-                <span className="text-[9px] font-bold text-slate-600 leading-tight block truncate w-full">
+                <span className="text-[8px] sm:text-[9px] font-bold text-slate-600 leading-tight block truncate w-full">
                   {tech.name}
                 </span>
               </motion.div>
