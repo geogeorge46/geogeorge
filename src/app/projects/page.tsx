@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import ProjectsClient from "./ProjectsClient";
+import dynamic from "next/dynamic";
+
+const ProjectsClient = dynamic(() => import("./ProjectsClient"), {
+  loading: () => (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-soft select-none text-slate-400 font-mono text-sm animate-pulse">
+      Loading Projects...
+    </div>
+  ),
+});
 
 export const metadata: Metadata = {
   title: "Geo George Projects | Full-Stack, IoT, AI & Cloud Development",

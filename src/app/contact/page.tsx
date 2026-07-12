@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import ContactClient from "./ContactClient";
+import dynamic from "next/dynamic";
+
+const ContactClient = dynamic(() => import("./ContactClient"), {
+  loading: () => (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-soft select-none text-slate-400 font-mono text-sm animate-pulse">
+      Loading...
+    </div>
+  ),
+});
 
 export const metadata: Metadata = {
   title: "Contact Geo George | Software Engineer & Developer",

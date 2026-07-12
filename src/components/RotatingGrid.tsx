@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
+import Image from "next/image";
+import portraitPic from "../../public/portrait.webp";
 
 interface CardConfig {
   id: string;
@@ -199,7 +201,6 @@ interface CardProps {
   colWidth: number;
   rowHeight: number;
   gap: number;
-  imageUrl: string;
 }
 
 const RotatingCard: React.FC<CardProps> = ({
@@ -208,7 +209,6 @@ const RotatingCard: React.FC<CardProps> = ({
   colWidth,
   rowHeight,
   gap,
-  imageUrl,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -240,21 +240,30 @@ const RotatingCard: React.FC<CardProps> = ({
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
     >
-      <motion.div
+      <m.div
         className="relative w-full h-full preserve-3d"
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ type: "spring", stiffness: 120, damping: 14 }}
       >
         {/* Front Side: Portrait Image Segment */}
-        <div
-          className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden shadow-sm border border-white/30"
-          style={{
-            backgroundImage: `url(${imageUrl})`,
-            backgroundSize: `${bgSize}px ${bgSize}px`,
-            backgroundPosition: `${bgPosX}px ${bgPosY}px`,
-            backgroundRepeat: "no-repeat",
-          }}
-        />
+        <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden shadow-sm border border-white/30">
+          <Image
+            src={portraitPic}
+            alt="Geo George Portrait Segment"
+            width={bgSize}
+            height={bgSize}
+            priority
+            quality={85}
+            sizes="(max-width: 768px) 100vw, 410px"
+            placeholder="blur"
+            style={{
+              position: "absolute",
+              left: `${bgPosX}px`,
+              top: `${bgPosY}px`,
+              maxWidth: "none",
+            }}
+          />
+        </div>
 
         {/* Back Side: Tech Info */}
         <div
@@ -279,7 +288,7 @@ const RotatingCard: React.FC<CardProps> = ({
             {card.techName}
           </span>
         </div>
-      </motion.div>
+      </m.div>
     </div>
   );
 };
@@ -290,7 +299,6 @@ export const RotatingGrid: React.FC = () => {
   const colWidth = 60;
   const rowHeight = 100;
   const gap = 10;
-  const imageUrl = "/portrait.jpg";
 
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
@@ -338,7 +346,6 @@ export const RotatingGrid: React.FC = () => {
             colWidth={colWidth}
             rowHeight={rowHeight}
             gap={gap}
-            imageUrl={imageUrl}
           />
         ))}
       </div>
