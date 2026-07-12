@@ -19,6 +19,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import aboutPortraitPic from "../../../public/about-portrait.webp";
 
 export default function AboutClient() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -145,12 +146,13 @@ export default function AboutClient() {
                   {/* Photo Frame */}
                   <div className="w-full h-[220px] rounded-[1.5rem] overflow-hidden relative border border-slate-100/80 shadow-md">
                     <Image
-                      src="/about-portrait.webp"
+                      src={aboutPortraitPic}
                       alt="Geo George Portrait"
                       fill
                       priority
                       sizes="(max-width: 768px) 100vw, 330px"
                       quality={85}
+                      placeholder="blur"
                       style={{
                         objectFit: "cover",
                         objectPosition: "50% 20%",

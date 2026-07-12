@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { m } from "framer-motion";
 import Image from "next/image";
+import portraitPic from "../../public/portrait.webp";
 
 interface CardConfig {
   id: string;
@@ -247,13 +248,14 @@ const RotatingCard: React.FC<CardProps> = ({
         {/* Front Side: Portrait Image Segment */}
         <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden shadow-sm border border-white/30">
           <Image
-            src="/portrait.webp"
+            src={portraitPic}
             alt="Geo George Portrait Segment"
             width={bgSize}
             height={bgSize}
             priority
             quality={85}
             sizes="(max-width: 768px) 100vw, 410px"
+            placeholder="blur"
             style={{
               position: "absolute",
               left: `${bgPosX}px`,
