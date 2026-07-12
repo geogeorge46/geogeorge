@@ -22,21 +22,36 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://geogeorge.vercel.app"),
   title: {
-    default: "Geo George | Software Engineer, Web Developer & IoT Developer",
+    default: "Geo George | Software Engineer & IoT Developer",
     template: "%s | Geo George",
   },
   description:
-    "Official portfolio of Geo George, a Software Engineer, Web Developer, IoT Developer, and Open Source Coordinator building scalable full-stack, AI-enabled, cloud, and connected systems.",
+    "Software Engineer specializing in Full Stack Development, AI, IoT, Cloud Computing, and Open Source. Explore projects and case studies.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Geo George | Software Engineer, Web Developer & IoT Developer",
+    title: "Geo George | Software Engineer & IoT Developer",
     description:
-      "Official portfolio of Geo George, Software Engineer, Web Developer, IoT Developer, and Open Source Coordinator.",
+      "Software Engineer specializing in Full Stack Development, AI, IoT, Cloud Computing, and Open Source. Explore projects and case studies.",
     url: "https://geogeorge.vercel.app",
     siteName: "Geo George Portfolio",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Geo George | Software Engineer & IoT Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Geo George | Software Engineer & IoT Developer",
+    description:
+      "Software Engineer specializing in Full Stack Development, AI, IoT, Cloud Computing, and Open Source. Explore projects and case studies.",
+    images: ["/og-image.png"],
   },
   verification: {
     google: "k3oeW34OWfE_pWwbw3Tz4PDOLvRhKtqESb32vAh9y-c",
