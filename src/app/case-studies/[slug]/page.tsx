@@ -3,6 +3,7 @@
 import React, { use } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { projects } from "@/data/projects";
 import {
   ArrowLeft,
@@ -109,8 +110,52 @@ export default function CaseStudyPage({ params }: PageProps) {
   // Find other case studies to recommend
   const otherProjects = projects.filter((p) => p.slug !== slug).slice(0, 3);
 
+  // CreativeWork Schema
+  const creativeWorkSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": project.fullTitle || project.title,
+    "description": project.solution || project.tagline,
+    "genre": project.category,
+    "url": `https://geogeorge.vercel.app/case-studies/${project.slug}`,
+    "creator": {
+      "@type": "Person",
+      "name": "Geo George",
+      "url": "https://geogeorge.vercel.app"
+    }
+  };
+
+  // SoftwareSourceCode Schema
+  const softwareSchema = project.githubUrl ? {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": project.fullTitle || project.title,
+    "description": project.solution || project.tagline,
+    "codeRepository": project.githubUrl,
+    "programmingLanguage": project.stack,
+    "targetProduct": {
+      "@type": "SoftwareApplication",
+      "name": project.title,
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "All",
+      "downloadUrl": project.liveUrl || ""
+    }
+  } : null;
+
   return (
     <div className="min-h-screen flex flex-col justify-between selection:bg-slate-200 bg-gradient-soft relative overflow-x-hidden">
+      {/* Dynamic Schemas Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
+      />
+      {softwareSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+        />
+      )}
+
       {/* Decorative Dot Patterns */}
       <div className="absolute top-12 left-24 w-32 h-32 dot-pattern opacity-30 -z-10" />
       <div className="absolute bottom-12 right-12 w-48 h-48 dot-pattern opacity-30 -z-10" />
@@ -349,10 +394,7 @@ export default function CaseStudyPage({ params }: PageProps) {
 
       </main>
 
-      {/* Footer copyright */}
-      <footer className="w-full py-8 text-center text-xs text-slate-400 select-none">
-        &copy; {new Date().getFullYear()} Geo George. All rights reserved.
-      </footer>
+      <Footer />
     </div>
   );
 }

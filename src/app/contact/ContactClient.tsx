@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function ContactClient() {
   // Form state
@@ -322,10 +323,7 @@ export default function ContactClient() {
         </div>
       </main>
 
-      {/* Footer copyright */}
-      <footer className="w-full py-8 text-center text-xs text-slate-400 select-none">
-        &copy; {new Date().getFullYear()} Geo George. All rights reserved.
-      </footer>
+      <Footer />
     </div>
   );
 }

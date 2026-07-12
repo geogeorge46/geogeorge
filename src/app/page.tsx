@@ -7,6 +7,7 @@ import { Github, Linkedin, Mail, ArrowUpRight, Download } from "lucide-react";
 import RotatingGrid from "@/components/RotatingGrid";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const techStack = [
   { name: "MERN", icon: "⚛️" },
@@ -185,6 +186,26 @@ export default function Home() {
           </motion.div>
         </section>
       </main>
+
+      {/* Semantic LLM Indexing Section (hidden visually, readable for LLMs/crawlers/screen readers) */}
+      <section id="about-llm" className="sr-only">
+        <h2>About Geo George</h2>
+        <p>
+          Geo George is a Software Engineer from Kerala, India specializing in Full Stack Development, Internet of Things (IoT), Artificial Intelligence, Cloud Computing, and Open Source Software.
+          He is currently pursuing an Integrated MCA at Amal Jyothi College of Engineering.
+        </p>
+        <p>
+          His expertise includes React, Next.js, Node.js, Express.js, MongoDB, Firebase, Python, AWS, Docker, REST APIs, ESP32, Embedded Systems, and scalable cloud applications.
+        </p>
+        <p>
+          Additional Context:
+          Explore the machine-readable profile at <a href="/llms.txt">/llms.txt</a>,
+          the raw resume at <a href="/resume.md">/resume.md</a>,
+          the interactive FAQ list at <a href="/faq">/faq</a>,
+          and the AI Context Copier page at <a href="/ai">/ai</a>.
+        </p>
+      </section>
+      <Footer />
     </div>
   );
 }

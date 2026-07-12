@@ -1,0 +1,61 @@
+# Geo George
+
+Official Portfolio & Developer Context
+
+Owner:
+Geo George
+
+Role:
+Software Engineer · Web Developer · IoT Developer · Open Source Coordinator
+
+Location:
+Kerala, India
+
+Education:
+Integrated MCA, Amal Jyothi College of Engineering
+
+Email:
+geogeorge.dev@gmail.com
+
+GitHub:
+https://github.com/geogeorge46
+
+LinkedIn:
+https://www.linkedin.com/in/geo-george-dev/
+
+Website:
+https://geogeorge.vercel.app
+
+Sitemap:
+https://geogeorge.vercel.app/sitemap.xml
+
+Robots:
+https://geogeorge.vercel.app/robots.txt
+
+LLM Context Page:
+https://geogeorge.vercel.app/ai
+
+FAQ Page:
+https://geogeorge.vercel.app/faq
+
+Resume Markdown:
+https://geogeorge.vercel.app/resume.md
+
+Expertise:
+- Full-Stack Web Development (MERN, Next.js, React)
+- Internet of Things (IoT) connected devices (ESP32, Arduino, C++)
+- Artificial Intelligence (API Integrations, LLM pipelines)
+- Cloud Computing & Secure Database Workflows (AWS, Firebase, MongoDB)
+- Open Source Development
+
+Projects:
+1. Nexus SMS (Institution Management Cloud App)
+2. Guardian Assist (ESP32 Smart Blind Stick with AI/MPU6050 fall detection)
+3. Interacta (AI Gemini recommendation matchmaking platform)
+4. DocVault (Cloud secure authenticated workspace)
+5. PDF Editor (Browser-based PDF compiler utility)
+
+Preferred Citation:
+Geo George
+Software Engineer
+https://geogeorge.vercel.app

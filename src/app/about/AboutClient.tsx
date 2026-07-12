@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function AboutClient() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -527,10 +528,7 @@ export default function AboutClient() {
         </section>
       </main>
 
-      {/* Footer copyright */}
-      <footer className="w-full py-8 text-center text-xs text-slate-400 select-none">
-        &copy; {new Date().getFullYear()} Geo George. All rights reserved.
-      </footer>
+      <Footer />
     </div>
   );
 }

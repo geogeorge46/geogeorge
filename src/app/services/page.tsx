@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Geo George Services | Web Development, IoT & Software Solutions",
@@ -264,10 +265,7 @@ export default function ServicesPage() {
 
       </main>
 
-      {/* Footer copyright */}
-      <footer className="w-full py-8 text-center text-xs text-slate-400 select-none">
-        &copy; {new Date().getFullYear()} Geo George. All rights reserved.
-      </footer>
+      <Footer />
     </div>
   );
 }
